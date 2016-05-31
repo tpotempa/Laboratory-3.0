@@ -1,0 +1,11 @@
+package pl.edu.pwsztar.universityrecruitment;
+ 
+rule "Qualification DRL"
+ruleflow-group "admission"
+lock-on-active true
+when
+    $p : UniversityCandidate(examResult <= 100)
+then
+    $p.setAdmission(false);
+end
+

@@ -1,0 +1,16 @@
+package pl.edu.pwsztar.universityrecruitment;
+
+import java.lang.Number;
+
+rule "Qualification"
+	dialect "java"
+	ruleflow-group "admission"
+	no-loop true
+	lock-on-active true
+	when
+		candidate : UniversityCandidate( examResult > 100 )
+	then
+		modify( candidate ) {
+				setAdmission( true )
+		}
+end
