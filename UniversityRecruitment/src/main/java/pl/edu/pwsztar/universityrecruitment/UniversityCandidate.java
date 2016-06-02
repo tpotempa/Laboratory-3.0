@@ -11,9 +11,7 @@ public class UniversityCandidate implements java.io.Serializable
    static final long serialVersionUID = 1L;
 
    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "UNIVERSITYCANDIDATE_ID_GENERATOR")
-   @javax.persistence.Id
-   @javax.persistence.SequenceGenerator(sequenceName = "UNIVERSITYCANDIDATE_ID_SEQ", allocationSize = 1000000, name = "UNIVERSITYCANDIDATE_ID_GENERATOR", initialValue = 1)
-   @javax.persistence.Column(unique = true)
+   @javax.persistence.SequenceGenerator(sequenceName = "UNIVERSITYCANDIDATE_ID_SEQ", name = "UNIVERSITYCANDIDATE_ID_GENERATOR")
    private java.lang.Long id;
 
    private java.lang.String firstName;
