@@ -12,7 +12,8 @@ public class UniversityCandidate implements java.io.Serializable
 
    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "UNIVERSITYCANDIDATE_ID_GENERATOR")
    @javax.persistence.Id
-   @javax.persistence.SequenceGenerator(sequenceName = "UNIVERSITYCANDIDATE_ID_SEQ", name = "UNIVERSITYCANDIDATE_ID_GENERATOR")
+   @javax.persistence.SequenceGenerator(sequenceName = "UNIVERSITYCANDIDATE_ID_SEQ", allocationSize = 1000000, name = "UNIVERSITYCANDIDATE_ID_GENERATOR", initialValue = 1)
+   @javax.persistence.Column(unique = true)
    private java.lang.Long id;
 
    private java.lang.String firstName;
@@ -21,7 +22,13 @@ public class UniversityCandidate implements java.io.Serializable
 
    private java.lang.Integer examResult;
 
-   private java.lang.Boolean admission;
+   private java.lang.Boolean admission = Boolean.FALSE;
+
+   private java.lang.String fieldOfStudy;
+
+   private java.lang.Boolean olympicFinalist;
+
+   private java.lang.String qualificationType;
 
    public UniversityCandidate()
    {
@@ -77,15 +84,49 @@ public class UniversityCandidate implements java.io.Serializable
       this.admission = admission;
    }
 
+   public java.lang.String getFieldOfStudy()
+   {
+      return this.fieldOfStudy;
+   }
+
+   public void setFieldOfStudy(java.lang.String fieldOfStudy)
+   {
+      this.fieldOfStudy = fieldOfStudy;
+   }
+
+   public java.lang.Boolean getOlympicFinalist()
+   {
+      return this.olympicFinalist;
+   }
+
+   public void setOlympicFinalist(java.lang.Boolean olympicFinalist)
+   {
+      this.olympicFinalist = olympicFinalist;
+   }
+
+   public java.lang.String getQualificationType()
+   {
+      return this.qualificationType;
+   }
+
+   public void setQualificationType(java.lang.String qualificationType)
+   {
+      this.qualificationType = qualificationType;
+   }
+
    public UniversityCandidate(java.lang.Long id, java.lang.String firstName,
          java.lang.String lastName, java.lang.Integer examResult,
-         java.lang.Boolean admission)
+         java.lang.Boolean admission, java.lang.String fieldOfStudy,
+         java.lang.Boolean olympicFinalist, java.lang.String qualificationType)
    {
       this.id = id;
       this.firstName = firstName;
       this.lastName = lastName;
       this.examResult = examResult;
       this.admission = admission;
+      this.fieldOfStudy = fieldOfStudy;
+      this.olympicFinalist = olympicFinalist;
+      this.qualificationType = qualificationType;
    }
 
 }
